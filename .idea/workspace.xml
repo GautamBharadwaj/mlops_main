@@ -6,6 +6,9 @@
       <change beforePath="$PROJECT_DIR$/dvc.lock" beforeDir="false" afterPath="$PROJECT_DIR$/dvc.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dvc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dvc.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/params.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/params.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/params.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/params.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/scores.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/scores.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saved_models/model.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/saved_models/model.joblib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/train_and_evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train_and_evaluate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
