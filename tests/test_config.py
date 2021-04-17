@@ -8,7 +8,7 @@ class CustomError(Exception):
 
 def test_generic():
     a=2
-    with pytest.raises(ValueError):
+    with pytest.raises(CustomError):
         if a not in range(10,20):
             raise CustomError
     #assert a==b # if assertion will be true i.e a==b if test case pass
