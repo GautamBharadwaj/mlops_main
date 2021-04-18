@@ -1,31 +1,26 @@
-from flask import Flask,render_template,request,jsonify
+from flask import Flask, render_template, request, jsonify
 import os
-import yaml
-import joblib
 import numpy as np
 from prediction_service import prediction
 
-params_path = "params.yaml"
 webapp_root = "webapp"
 
-static_dir = os.path.join(webapp_root,"static")
-template_dir = os.path.join(webapp_root,"templates")
+static_dir = os.path.join(webapp_root, "static")
+template_dir = os.path.join(webapp_root, "templates")
 
-app = Flask(__name__,static_folder = static_dir, template_folder = template_dir)
+app = Flask(__name__, static_folder=static_dir, template_folder=template_dir)
 
-@app.route("/",methods=['GET','POST'])
+
+@app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method=='POST':
+    if request.method == "POST":
         try:
             if request.form:
-                dict_req = dict(request.form).values()
-                print(dict_req)
-                dict_req = [list(map(float, dict_req))]
-                response = prediction.predict(dict_req)
+                dict_req = dict(request.form)
+                response = prediction.form_response(dict_req)
                 return render_template("index.html", response=response)
             elif request.json:
-                print("my is baulitgu")
-                response = prediction.api_response(request)
+                response = prediction.api_response(request.json)
                 return jsonify(response)
 
         except Exception as e:
@@ -34,9 +29,9 @@ def index():
             error = {"error": e}
 
             return render_template("404.html", error=error)
-
     else:
-        return render_template('index.html')
+        return render_template("index.html")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     app.run(host='127.0.0.1', port=8001, debug=True)
